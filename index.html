@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for kesayangan jaki🤍</title>
+
+  <style>
+    body {
+        margin:0;
+        background:#000;
+        color:#f9a8d4;
+        font-family:Arial,sans-serif;
+        text-align:center;
+        overflow-x: hidden;
+    }
+
+    #welcome {
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    #welcome h1 {
+        font-size:80px;
+        margin:0;
+    }
+
+    #welcome h2 {
+        font-size:35px;
+    }
+
+    button {
+        padding:15px 40px;
+        border:none;
+        border-radius:50px;
+        font-size:18px;
+        font-weight:bold;
+        background:#f9a8d4;
+        color:white;
+        cursor:pointer;
+        box-shadow:0 0 20px #f9a8d4;
+        animation: pulse 2s infinite;
+        transition: transform 0.2s;
+    }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); box-shadow: 0 0 20px #f9a8d4; }
+        50% { transform: scale(1.05); box-shadow: 0 0 30px #ffb6c1; }
+        100% { transform: scale(1); box-shadow: 0 0 20px #f9a8d4; }
+    }
+
+    #content {
+        padding:30px 10px;
+    }
+
+    #content h1 {
+        font-size: 32px;
+        text-transform: lowercase;
+        margin-bottom: 20px;
+    }
+
+    img {
+        width:250px;
+        border-radius:20px;
+        box-shadow:0 0 25px #f9a8d4;
+        margin-top:20px;
+    }
+
+    .gallery {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:30px;
+        padding:20px 10px;
+    }
+
+.gallery img {
+        width:100%;
+        aspect-ratio:1/1;
+        object-fit:cover;
+        border-radius:15px;
+        box-shadow:0 0 15px #f9a8d4;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:active, .gallery img:hover {
+        transform: scale(1.06);
+        box-shadow: 0 0 25px #ffb6c1;
+    }
+
+    @media screen and (orientation: landscape) {
+        .gallery {
+            grid-template-columns:1fr 1fr 1fr;
+            gap: 20px;
+        }
+        .pesan {
+            max-width:900px;
+        }
+    }
+
+    .pesan {
+        max-width:700px;
+        margin:auto;
+        padding:10px;
+        font-size:17px;
+        line-height:1.8;
+        text-align: left;
+        text-transform: lowercase;
+    }
+
+    .pesan h2 {
+        text-align: center;
+    }
+
+    #quotes {
+        text-align: center;
+        min-height: 25px;
+        font-weight: bold;
+        color: #ffb6c1;
+        letter-spacing: 0.5px;
+    }
+
+    #musicBtn {
+        position:fixed;
+        left:20px;
+        bottom:20px;
+        width:55px;
+        height:55px;
+        border-radius:50%;
+        border:none;
+        background:#f9a8d4;
+        color:white;
+        font-size:22px;
+        box-shadow:0 0 15px #f9a8d4;
+        z-index:999;
+        animation: none;
+    }
+
+    .flower {
+        position:fixed;
+        top:-10px;
+        font-size:20px;
+        animation:fall linear forwards;
+        pointer-events:none;
+        z-index:1;
+    }
+
+    @keyframes fall {
+        to {
+            transform:translateY(110vh) rotate(360deg);
+        }
+    }
+
+    .pesan-akhir {
+        margin-top:40px;
+        padding:20px;
+        border:2px solid #f9a8d4;
+        border-radius:20px;
+        background:rgba(249, 168, 212, 0.05);
+        backdrop-filter: blur(5px);
+        text-align: left;
+        text-transform: lowercase;
+        box-shadow: 0 0 15px rgba(249, 168, 212, 0.2);
+    }
+
+    .pesan-akhir h2 {
+        color:#f9a8d4;
+        margin-bottom:15px;
+        text-align: center;
+    }
+
+    .pesan-akhir p {
+        line-height:1.8;
+    }
+
+    .calendar-box {
+        max-width:300px;
+        margin:20px auto 35px auto;
+        padding:12px 15px;
+        border-radius:20px;
+        background:rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(8px);
+        border:1px solid #f9a8d4;
+        box-shadow:0 0 20px rgba(249, 168, 212, 0.3);
+        text-align: center;
+    }
+
+    .calendar-header {
+        font-size:18px;
+        font-weight:bold;
+        margin-bottom:10px;
+        color:#f9a8d4;
+        letter-spacing: 1px;
+    }
+
+    .calendar-grid {
+        display:grid;
+        grid-template-columns:repeat(7,1fr);
+        gap:4px;
+        text-align:center;
+        font-size: 13px;
+    }
+
+    .calendar-grid div {
+        padding:5px 2px;
+    }
+
+    .birthday {
+        background:#f9a8d4;
+        color:black;
+        border-radius:50%;
+        font-weight:bold;
+        box-shadow:0 0 12px #f9a8d4;
+    }
+
+    .calendar-box p {
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="welcome">
+    <h1>🎁</h1>
+    <h2>open your gift</h2>
+    <button onclick="openGift()">buka</button>
+  </div>
+
+  <div id="content" style="display:none;">
+    <h1>happy birthday sayangkuu🤍</h1>
+
+    <div class="pesan">
+      <h2>untuk kamu 💖</h2>
+
+      <div class="calendar-box">
+        <div class="calendar-header">✨ september 2026 ✨</div>
+        <div class="calendar-grid">
+          <div style="color: #ffb6c1; font-weight: bold;">su</div><div>mo</div><div>tu</div><div>we</div><div>th</div><div>fr</div><div>sa</div>
+          <div></div><div>1</div><div>2</div><div>3</div>
+          <div class="birthday">4</div>
+          <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+          <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div>
+          <div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div>
+          <div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div>
+        </div>
+        <p>🎂 the day my favorite person was born 💖</p>
+      </div>
+
+      <p>
+        selamat ulang tahun yaa sayangg
+        semoga keinginanmu tercapai, selalu bahagia, cita' kamu tercapai, dilancarkan rejekinya, panjang umur, dan sehat selalu sayangg.
+      </p>
+
+      <p>
+        hari ini adalah hari yang paling spesial, karena orang favoritku lahir ke dunia. terima kasih yaa sudah bertahan sejauh ini melewati banya hal' hebat. kamu itu berharga banget, jangan pernah ngerasa sendirian yaa? karna ada aku yang selalu nemenin kamu.
+      </p>
+
+      <p>
+        makasi yaa sayangg udah ke hidup jaki? jaki seneng banget akan kedatangan kamu di hidup jaki, kamu selalu jadi alasan jaki bahagia, you'll always be my favorite person, my love.
+      </p>
+
+      <p>
+        ouhh iyaa, selalu jadi diri kamu sendiri ya sayangg? karna jaki lebih suka kalo kamu jadi diri kamu sendiri, ga perlu dengerin omongan orang lain yang ga penting yaa.
+      </p>
+
+      <p>
+        tetap tersenyum, tetap bahagia, dan jangan lupa menikmati hari spesialmu ini dengan penuh suka cita. i love you more than words can say. 💕
+      </p>
+    </div>
+
+    <h2>my favorite person 📸</h2>
+    <div class="gallery">
+      <img src="foto1.png">
+      <img src="foto2.png">
+      <img src="foto3.png">
+      <img src="foto4.png">
+      <img src="foto5.png">
+      <img src="foto6.png">
+      <h2>bear 🐻 tap aku!</h2>
+      <button onclick="alert('haloo cantikk, semoga sukaa sama website yang akuu buat yaa 🤍')">🐻</button>
+    </div>
+
+    <div class="pesan-akhir">
+      <h2>💌 pesan terakhir</h2>
+      <p>terima kasih banyak sudah hadir dan mau meluangkan waktumu di hidup aku selama ini.</p>
+      <p>semoga semua hal baik selalu datang menghampiri kamu, dan semoga semua impian indah yang kamu simpan rapi pelan-pelan bisa terwujud satu per satu yaa.</p>
+      <p>tetap jadi diri kamu yang manis yang selalu aku kenal, selalu bahagia di setiap harinya, dan jangan pernah lupa untuk tersenyum hari ini. ❤️</p>
+      <p>happy birthday sayangkuu 🎂💕</p>
+    </div>
+
+  </div>
+
+  <audio id="musik" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+  </audio>
+  <button id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+  <script>
+    function openGift(){
+      document.getElementById("welcome").style.display="none";
+      document.getElementById("content").style.display="block";
+      
+      let music = document.getElementById("musik");
+      if (music) {
+        music.play().catch(function(error) {
+          console.log("Autoplay diblokir:", error);
+        });
+      }
+    }
+
+    function toggleMusic(){
+      let music=document.getElementById("musik");
+      if(music.paused){
+        music.play().catch(e => console.log(e));
+      }else{
+        music.pause();
+      }
+    }
+
+    setInterval(() => {
+      let flower=document.createElement("div");
+      flower.className="flower";
+      flower.innerHTML="🌸";
+      flower.style.left=Math.random()*100+"vw";
+      flower.style.animationDuration=(Math.random()*5+5)+"s";
+      document.body.appendChild(flower);
+      setTimeout(()=>{
+        flower.remove();
+      },10000);
+    }, 500);
+  </script>
+</body>
+</html>
+
