@@ -63,8 +63,23 @@
     #content h1 {
         font-size: 32px;
         text-transform: lowercase;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
     }
+
+    /* Efek teks mengetik otomatis (Typing Effect) */
+    .typing-effect {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffb6c1;
+        border-right: 2px solid #f9a8d4;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 10px auto 25px auto;
+        max-width: fit-content;
+        animation: typing 3.5s steps(35) infinite alternate, blink 0.5s infinite;
+    }
+    @keyframes typing { from { width: 0; } to { width: 100%; } }
+    @keyframes blink { from { border-color: transparent; } to { border-color: #f9a8d4; } }
 
     img {
         width:250px;
@@ -80,7 +95,7 @@
         padding:20px 10px;
     }
 
-.gallery img {
+    .gallery img {
         width:100%;
         aspect-ratio:1/1;
         object-fit:cover;
@@ -227,7 +242,7 @@
   </style>
 </head>
 
-<body>
+  <body>
 
   <div id="welcome">
     <h1>🎁</h1>
@@ -237,6 +252,8 @@
 
   <div id="content" style="display:none;">
     <h1>happy birthday sayangkuu🤍</h1>
+    
+    <div class="typing-effect">count on me like 1, 2, 3... i'll be there 💖</div>
 
     <div class="pesan">
       <h2>untuk kamu 💖</h2>
@@ -255,32 +272,21 @@
         <p>🎂 the day my favorite person was born 💖</p>
       </div>
 
-      <p>
-        selamat ulang tahun yaa sayangg
-      </p>
+      <p>selamat ulang tahun yaa sayangg</p>
      
-      <p>
-        semoga keinginanmu tercapai, selalu bahagia, cita' kamu tercapai, dilancarkan rejekinya, panjang umur, dan sehat selalu sayangg.
-      </p>
+      <p>semoga keinginanmu tercapai, selalu bahagia, cita' kamu tercapai, dilancarkan rejekinya, panjang umur, dan sehat selalu sayangg.</p>
 
-      <p>
-        hari ini adalah hari yang paling spesial, karena orang favoritku lahir ke dunia. terima kasih yaa sudah bertahan sejauh ini melewati banya hal' hebat. kamu itu berharga banget, jangan pernah ngerasa sendirian yaa? karna ada aku yang selalu nemenin kamu.
-      </p>
+      <p>hari ini adalah hari yang paling spesial, karena orang favoritku lahir ke dunia. terima kasih yaa sudah bertahan sejauh ini melewati banya hal' hebat. kamu itu berharga banget, jangan pernah ngerasa sendirian yaa? karna ada aku yang selalu nemenin kamu.</p>
 
-      <p>
-        makasi yaa sayangg udah ke hidup jaki? jaki seneng banget akan kedatangan kamu di hidup jaki, kamu selalu jadi alasan jaki bahagia, you'll always be my favorite person, my love.
-      </p>
+      <p>sama kayak lagu bruno mars yang lagi kamu denger sekarang, kamu selalu bisa andalkan jaki dalam kondisi apa pun. gausah khawatir menghadapi hari esok, karena jaki bakal selalu ada di samping kamu buat nemenin dan jaga kamu.</p>
 
-      <p>
-        ouhh iyaa, selalu jadi diri kamu sendiri yaa sayangg? karna jaki lebih suka kalo kamu jadi diri kamu sendiri, ga perlu dengerin omongan orang lain yang ga penting yaa.
-      </p>
+      <p>makasi yaa sayangg udah ke hidup jaki? jaki seneng banget akan kedatangan kamu di hidup jaki, kamu selalu jadi alasan jaki bahagia, you'll always be my favorite person, my love.</p>
 
-      <p>
-        tetap tersenyum, tetap bahagia, dan jangan lupa menikmati hari spesialmu ini dengan penuh suka cita. i love you more than words can say. 💕
-      </p>
-      <p>
-        btw, kamuu kenapa cantik, manis, gemes, lucu, indah, dan perfect bangett si? kan akunya jadi makin cinta sama kamu, hehee, lopyuu sayangg. 
-      </p>
+      <p>ouhh iyaa, selalu jadi diri kamu sendiri yaa sayangg? karna jaki lebih suka kalo kamu jadi diri kamu sendiri, ga perlu dengerin omongan orang lain yang ga penting yaa.</p>
+
+      <p>tetap tersenyum, tetap bahagia, dan jangan lupa menikmati hari spesialmu ini dengan penuh suka cita. i love you more than words can say. 💕</p>
+      
+      <p>btw, kamuu kenapa cantik, manis, gemes, lucu, indah, dan perfect bangett si? kan akunya jadi makin cinta sama kamu, hehee, lopyuu sayangg.</p>
     </div>
 
     <h2>my favorite person 📸</h2>
@@ -347,4 +353,3 @@
   </script>
 </body>
 </html>
-
